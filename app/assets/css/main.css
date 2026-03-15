@@ -1,0 +1,165 @@
+/* ============================================================
+   PORTFOLIO — Global Styles
+   ============================================================ */
+
+@import "modern-normalize/modern-normalize.css";
+@import "animate.css/animate.min.css";
+
+/* ── 1. DESIGN TOKENS ─────────────────────────────────────── */
+:root {
+  /* Colors — Light */
+  --color-bg: #f8f8f6;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f0f0ec;
+  --color-border: #e2e2de;
+
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b6b6b;
+  --color-text-subtle: #9e9e9e;
+
+  --color-accent: #5c49e0;
+  --color-accent-hover: #4a39cc;
+  --color-accent-light: #ede9ff;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", "Inter", system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-padding: clamp(1rem, 5vw, 3rem);
+
+  /* Borders */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-md:
+    0 4px 16px -2px rgb(0 0 0 / 0.1), 0 2px 6px -2px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 20px 40px -8px rgb(0 0 0 / 0.14);
+
+  /* Transitions */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── 2. DARK MODE TOKENS ──────────────────────────────────── */
+html.dark {
+  --color-bg: #0f0f12;
+  --color-surface: #18181f;
+  --color-surface-alt: #1e1e28;
+  --color-border: #2a2a38;
+
+  --color-text: #f0f0f0;
+  --color-text-muted: #a0a0b0;
+  --color-text-subtle: #6a6a80;
+
+  --color-accent: #7c6ff7;
+  --color-accent-hover: #9488ff;
+  --color-accent-light: #1e1a40;
+
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 16px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 20px 40px -8px rgb(0 0 0 / 0.5);
+}
+
+/* ── 3. BASE ──────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: var(--text-base);
+  transition:
+    background-color var(--duration-slow) var(--ease-out),
+    color var(--duration-slow) var(--ease-out);
+  min-height: 100dvh;
+}
+
+/* ── 4. TYPOGRAPHY ────────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+p,
+li {
+  color: var(--color-text-muted);
+  max-width: 65ch;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ── 5. LAYOUT UTILITIES ──────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.section {
+  padding-block: var(--space-24);
+}
+
+/* ── 6. ANIMATE.CSS HELPERS ───────────────────────────────── */
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate__animated {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
