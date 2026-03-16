@@ -122,7 +122,15 @@
           </button>
           
           <div class="lightbox__content" @click.stop>
-            <NuxtImg :src="images[lightboxIndex]" :alt="projectName" class="lightbox__img" format="webp" />
+            <Transition name="lightbox-fade">
+              <NuxtImg 
+                :key="lightboxIndex"
+                :src="images[lightboxIndex]" 
+                :alt="projectName" 
+                class="lightbox__img" 
+                format="webp" 
+              />
+            </Transition>
           </div>
 
           <div v-if="images.length > 1" class="lightbox__nav">
@@ -395,11 +403,17 @@ function next() { if (current.value < images.value.length - 1) current.value++ }
 }
 
 .lightbox__img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  max-width: 95vw;
+  max-height: 85vh;
   object-fit: contain;
   box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
+  /* Dimensiones mínimas para evitar colapso del contenedor flex */
+  min-width: 200px;
+  min-height: 200px;
+  pointer-events: auto;
 }
 
 .lightbox__nav {
@@ -428,6 +442,7 @@ function next() { if (current.value < images.value.length - 1) current.value++ }
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
 .lightbox__btn:hover:not(:disabled) {
@@ -454,6 +469,18 @@ function next() { if (current.value < images.value.length - 1) current.value++ }
 
 .btn-fade-enter-active, .btn-fade-leave-active { transition: all 180ms ease; }
 .btn-fade-enter-from, .btn-fade-leave-to { opacity: 0; transform: translateY(-50%) scale(0.88); }
+
+.lightbox-fade-enter-active, .lightbox-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.lightbox-fade-enter-from, .lightbox-fade-leave-to {
+  opacity: 0;
+}
+
+/* Evitar saltos de layout cuando hay dos imágenes en el DOM (durante el crossfade) */
+.lightbox-fade-leave-active {
+  position: absolute;
+}
 
 /* ── Counter & Dots ────────────────────────────────────────── */
 .carousel__counter {
