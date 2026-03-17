@@ -17,6 +17,9 @@ logs
 .DS_Store
 .fleet
 .idea
+_agents/
+audit-report.json
+*.json.gz
 
 # Local env files
 .env
