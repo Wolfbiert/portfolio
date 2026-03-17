@@ -89,13 +89,44 @@ export default defineNuxtConfig({
     }
   },
 
-  // Nitro Configuration for Production Assets
+  // Nitro Configuration
   nitro: {
-    serverAssets: [
-      {
-        baseName: 'projects',
-        dir: 'public/projects'
+    // Ya no usamos serverAssets directos porque fallan en Vercel sobre la carpeta public
+  },
+
+  // Hooks para procesos de construcción
+  hooks: {
+    'build:before': () => {
+      const fs = require('node:fs')
+      const path = require('node:path')
+      
+      const projectsDir = path.resolve('public/projects')
+      const assetsDir = path.resolve('server/assets')
+      const manifestPath = path.join(assetsDir, 'projects.json')
+      
+      if (!fs.existsSync(projectsDir)) return
+
+      const projects = fs.readdirSync(projectsDir)
+      const manifest = {}
+      const VALID_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.avif']
+
+      for (const slug of projects) {
+        const slugPath = path.join(projectsDir, slug)
+        if (fs.statSync(slugPath).isDirectory()) {
+          const files = fs.readdirSync(slugPath)
+          const projectImages = files
+            .filter((f: string) => VALID_EXTENSIONS.some((ext: string) => f.toLowerCase().endsWith(ext)))
+            .sort((a: string, b: string) => a.localeCompare(b, undefined, { numeric: true }))
+          ;(manifest as any)[slug] = projectImages
+        }
       }
-    ]
+
+      if (!fs.existsSync(assetsDir)) {
+        fs.mkdirSync(assetsDir, { recursive: true })
+      }
+      
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest))
+      console.log('✅ [Build Hook] Proyectos detectados y manifiesto generado en server/assets/projects.json')
+    }
   }
 });

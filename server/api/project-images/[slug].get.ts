@@ -1,5 +1,5 @@
 // server/api/project-images/[slug].get.ts
-// Returns sorted list of image URLs from the Nitro storage layer
+// Returns sorted list of image URLs from the pre-generated manifest
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug')
 
@@ -7,32 +7,21 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: 'Invalid slug' })
   }
 
-  const VALID_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.avif']
-
   try {
-    // Usamos useStorage para acceder a los assets del servidor integrados por Nitro
-    const storage = useStorage('assets:projects')
-    const allKeys = await storage.getKeys()
+    // Leemos el manifiesto generado durante el build en server/assets/projects.json
+    // En Nitro, server/assets se mapea a 'assets:server'
+    const storage = useStorage('assets:server')
+    const manifest = await storage.getItem('projects.json') as Record<string, string[]> | null
     
-    // Las llaves detectadas tendrán el formato 'slug:archivo.ext' o 'slug/archivo.ext'
-    // Nitro suele usar ':' como separador interno
-    const images = allKeys
-      .filter(key => {
-        const lowerKey = key.toLowerCase()
-        const isProjectFile = key.startsWith(`${slug}:`) || key.startsWith(`${slug}/`)
-        const hasValidExt = VALID_EXTENSIONS.some(ext => lowerKey.endsWith(ext))
-        return isProjectFile && hasValidExt
-      })
-      .map(key => {
-        // Normalizamos la ruta para la URL pública
-        const fileName = key.split(/[:/]/).pop()
-        return `/projects/${slug}/${fileName}`
-      })
-      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    if (!manifest || !manifest[slug]) {
+      return { images: [] }
+    }
+
+    const images = manifest[slug].map(f => `/projects/${slug}/${f}`)
 
     return { images }
   } catch (error) {
-    // Si hay error o no hay storage, devolvemos vacío
+    // Si hay error, devolvemos lista vacía para que el frontend maneje el fallback
     return { images: [] }
   }
 })
