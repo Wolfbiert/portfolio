@@ -14,7 +14,9 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-security",
     "@nuxt/image",
-    "@nuxtjs/seo"
+    "@nuxtjs/seo",
+    "@vercel/analytics/nuxt",
+    "@vercel/speed-insights/nuxt"
   ],
 
   // Security Configuration
@@ -37,7 +39,7 @@ export default defineNuxtConfig({
 
   // SEO Configuration
   site: {
-    url: 'https://agustinmassoni.dev', // Cambiar por la URL real después
+    url: 'https://portfolio-ten-xi-h8rspuyqvo.vercel.app', // URL actual de Vercel
     name: 'Portfolio | Agustín Massoni',
     description: 'Técnico Superior en Desarrollo de Software especializado en crear soluciones digitales modernas y eficientes.',
   },
@@ -85,5 +87,15 @@ export default defineNuxtConfig({
         '@vue/devtools-kit'
       ]
     }
+  },
+
+  // Nitro Configuration for Production Assets
+  nitro: {
+    serverAssets: [
+      {
+        baseName: 'projects',
+        dir: 'public/projects'
+      }
+    ]
   }
 });
