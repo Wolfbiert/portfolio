@@ -39,7 +39,7 @@ export default defineNuxtConfig({
 
   // SEO Configuration
   site: {
-    url: 'https://portfolio-ten-xi-h8rspuyqvo.vercel.app', // URL actual de Vercel
+    url: 'https://agustinmassoni.dev', // Dominio oficial
     name: 'Portfolio | Agustín Massoni',
     description: 'Técnico Superior en Desarrollo de Software especializado en crear soluciones digitales modernas y eficientes.',
   },

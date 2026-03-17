@@ -94,9 +94,10 @@ Si deseas explorar el código localmente, sigue estos pasos:
 
 ¿Tienes un proyecto en mente o te gustaría charlar sobre tecnología?
 
+- **Sitio Web**: [agustinmassoni.dev](https://agustinmassoni.dev)
 - **LinkedIn**: [Agustín Massoni](https://www.linkedin.com/in/agustin-massoni)
 - **Email**: agustinmassoni10@gmail.com
-- **WhatsApp**: [Contactar conmigo](https://wa.me/tu-numero-aqui)
+- **WhatsApp**: [Enviar mensaje directo](https://wa.me/5493425464539)
 
 ---
 
