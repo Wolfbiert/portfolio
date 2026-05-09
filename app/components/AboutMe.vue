@@ -47,14 +47,14 @@
           </ul>
         </div>
 
-        <!-- Cimientos / Hardware -->
+        <!-- Fundamentos de Sistemas -->
         <div class="about-card about-card--extras">
           <div class="about-card__icon" aria-hidden="true">
             <Icon name="lucide:cpu" size="32" />
           </div>
-          <h3 class="about-card__title">Cimientos de IT</h3>
+          <h3 class="about-card__title">Fundamentos de Sistemas</h3>
           <p class="about-card__text about-card__text--sm">
-            Mi formación técnica se apoya en el entendimiento profundo de la infraestructura física del software.
+            Conocimientos sólidos de hardware y software que complementan mi perfil como desarrollador.
           </p>
           <ul class="extra-list">
             <li v-for="extra in extras" :key="extra" class="extra-item">
@@ -73,9 +73,9 @@
           <div class="study-info">
             <p class="study-info__degree">Téc. Sup. en Desarrollo de Software</p>
             <p class="study-info__status">
-              <span class="status-badge">
+              <span class="status-badge status-badge--completed">
                 <span class="status-badge__dot"></span>
-                Ultima materia — Título en trámite
+                Titulado 2026
               </span>
             </p>
           </div>
@@ -122,10 +122,10 @@ const interests = [
 ]
 
 const extras = [
-  'Diagnóstico profundo de Hardware',
-  'Administración básica de Servidores',
-  'Mantenimiento preventivo de Sistemas',
-  'Arquitectura de estaciones de trabajo',
+  'Armado, mantenimiento y reparación de hardware de PC',
+  'Diagnóstico y resolución de problemas comunes de componentes',
+  'Reparación de sistemas operativos y recuperación de datos',
+  'Optimización del rendimiento de equipos',
 ]
 
 const pillars = [
@@ -294,6 +294,16 @@ const pillars = [
   border: 1px solid color-mix(in srgb, #22c55e 30%, transparent);
   border-radius: var(--radius-full);
   padding: var(--space-1) var(--space-3);
+}
+
+.status-badge--completed {
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+.status-badge--completed .status-badge__dot {
+  background: var(--color-accent);
 }
 
 .status-badge__dot {

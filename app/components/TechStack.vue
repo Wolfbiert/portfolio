@@ -65,6 +65,8 @@ const categories = [
       { name: 'Docker', icon: 'logos:docker-icon', tag: 'Containers' },
       { name: 'Git / GitHub', icon: 'logos:git-icon', tag: 'Versionado' },
       { name: 'Vercel', icon: 'logos:vercel-icon', tag: 'Deploy' },
+      { name: 'Render', icon: 'simple-icons:render', tag: 'Deploy' },
+      { name: 'Cloudflare', icon: 'logos:cloudflare-icon', tag: 'CDN / Security' },
     ]
   }
 ]
