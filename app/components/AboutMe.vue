@@ -149,7 +149,7 @@ const pillars = [
 
 <style scoped>
 .sobre-mi {
-  background: var(--color-bg);
+  background: var(--color-surface-alt);
 }
 
 .section-header {
@@ -193,10 +193,13 @@ const pillars = [
 
 /* ── Card base ────────────────────────────────────────────── */
 .about-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(92, 73, 224, 0.1);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
+  box-shadow: 0 4px 24px -4px rgba(92, 73, 224, 0.08);
   transition:
     border-color var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out);

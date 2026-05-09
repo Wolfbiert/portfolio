@@ -88,8 +88,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 70% 40%, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 70%),
-    radial-gradient(ellipse 40% 40% at 20% 70%, color-mix(in srgb, #a78bfa 10%, transparent), transparent 70%);
+    radial-gradient(ellipse 60% 50% at 70% 40%, color-mix(in srgb, var(--color-accent) var(--hero-blob-opacity), transparent), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 70%, color-mix(in srgb, var(--hero-blob-secondary) 10%, transparent), transparent 70%);
   pointer-events: none;
 }
 

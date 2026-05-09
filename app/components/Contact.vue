@@ -155,7 +155,7 @@ const handleSubmit = async () => {
 
 <style scoped>
 .contacto {
-  background: var(--color-surface-alt);
+  background: var(--color-bg);
 }
 
 .section-header {

@@ -8,10 +8,14 @@
 /* ── 1. DESIGN TOKENS ─────────────────────────────────────── */
 :root {
   /* Colors — Light */
-  --color-bg: #f8f8f6;
+  --color-bg: #f0f2f8;
   --color-surface: #ffffff;
-  --color-surface-alt: #f0f0ec;
-  --color-border: #e2e2de;
+  --color-surface-alt: #e4e9f7;
+  --color-border: #d0d6e8;
+
+  /* Hero blobs */
+  --hero-blob-opacity: 0.20;
+  --hero-blob-secondary: #7c9cf5;
 
   --color-text: #1a1a1a;
   --color-text-muted: #6b6b6b;
@@ -83,6 +87,10 @@ html.dark {
   --color-accent: #7c6ff7;
   --color-accent-hover: #9488ff;
   --color-accent-light: #1e1a40;
+
+  /* Hero blobs */
+  --hero-blob-opacity: 0.12;
+  --hero-blob-secondary: #a78bfa;
 
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.3);
   --shadow-md: 0 4px 16px -2px rgb(0 0 0 / 0.4);

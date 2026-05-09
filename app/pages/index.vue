@@ -66,8 +66,5 @@ useSchemaOrg([
   border-radius: 2px;
 }
 
-.sobre-mi  { background: var(--color-bg); }
-.proyectos { background: var(--color-surface-alt); }
-.stack     { background: var(--color-bg); }
-.contacto  { background: var(--color-surface-alt); }
+
 </style>

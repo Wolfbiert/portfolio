@@ -74,7 +74,7 @@ const categories = [
 
 <style scoped>
 .tech-stack {
-  background: var(--color-bg);
+  background: var(--color-surface-alt);
 }
 
 .section-header {
