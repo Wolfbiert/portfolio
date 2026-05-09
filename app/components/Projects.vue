@@ -124,7 +124,7 @@ const projects: Project[] = [
     highlights: [
       'Oponente virtual simulado con diálogos e intervenciones dinámicas según tu progreso',
       '3 minijuegos: Piedra/Papel/Tijera, Simón Dice y Adivina el Número',
-      'Dificultad evolutiva: mecánicas que cambian según la habilidad del jugador',
+      'Juego con 3 niveles de dificultad con eventos aleatorios por nivel y distinta probabilidad de intervención según la puntuación del jugador',
       'Estética Cyberpunk con glassmorphism y animaciones GSAP fluidas',
     ],
     stack: ['Vue.js 3', 'Electron.js', 'GSAP', 'Howler.js', 'CSS Glassmorphism'],
@@ -142,7 +142,7 @@ const projects: Project[] = [
     description:
       'Ecosistema digital integral para la preservación y difusión de la cultura polaca. Combina un sitio institucional público con un Campus Virtual para la gestión de talleres educativos y un panel administrativo robusto para el control de la comunidad y contenidos.',
     highlights: [
-      'Sistema de roles jerárquicos (Público, Socio, Profe, Admin) con contenido dinámico y áreas privadas.',
+      'Primera presencia web de la asociación. Panel de administración que permite gestionar el 100% del contenido dinámico sin intervención técnica.',
       'Campus Virtual con gestión de inscripciones a talleres y descarga segura de material de estudio.',
       'Back-office completo para administración de socios, noticias y moderación de registros en tiempo real.',
       'Sitio institucional moderno con buscador avanzado de novedades y formularios de contacto dinámicos.',
@@ -163,8 +163,8 @@ const projects: Project[] = [
     description:
       'Editor colaborativo ultraligero y LAN-first diseñado para el aula. Permite que docentes y estudiantes editen el mismo código en tiempo real sin internet, sin cuentas y sin instalación. El docente tiene control total: permisos granulares, bloqueos, visibilidad de cursores y ejecución de código integrada directamente en el navegador.',
     highlights: [
-      'LAN-first: funciona sin internet, el flujo principal no depende de la nube',
-      'Sincronización sin conflictos mediante CRDT (Yjs + Hocuspocus) — tecnología de Figma y Notion',
+      'LAN-first diseñado para aulas: funciona con red WiFi local, con o sin conexión a internet',
+      'Sincronización colaborativa sin conflictos mediante CRDT (Yjs + Hocuspocus) — tecnología de Figma y Notion',
       'Ejecución de JavaScript en el navegador con fallback automático a Piston API',
       'Control pedagógico total: roles, permisos granulares por alumno y bloqueos en tiempo real',
       'PWA con soporte offline e IndexedDB para persistencia local',
