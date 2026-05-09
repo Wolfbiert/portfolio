@@ -145,7 +145,6 @@ const projects: Project[] = [
       'Primera presencia web de la asociación. Panel de administración que permite gestionar el 100% del contenido dinámico sin intervención técnica.',
       'Campus Virtual con gestión de inscripciones a talleres y descarga segura de material de estudio.',
       'Sistema de roles jerárquicos que desbloquea contenido dinámico y áreas privadas según el tipo de usuario.',
-      'Sitio institucional moderno con buscador avanzado de novedades y formularios de contacto dinámicos.',
     ],
     stack: ['Vue.js', 'Vite', 'Node.js', 'Express', 'Supabase', 'PostgreSQL', 'Cloudinary', 'Render'],
     github: undefined,
