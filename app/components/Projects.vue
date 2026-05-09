@@ -122,7 +122,7 @@ const projects: Project[] = [
     description:
       'El jugador se enfrenta a un oponente virtual con personalidad simulada en una serie de minijuegos clásicos reinventados. El sistema reacciona en función del progreso del jugador y puede intervenir con modificadores en tiempo real, haciendo cada partida impredecible.',
     highlights: [
-      'Oponente virtual simulado con diálogos e intervenciones dinámicas según tu progreso',
+      'Oponente virtual con diálogos dinámicos y modificadores en tiempo real según el rendimiento del jugador',
       '3 minijuegos: Piedra/Papel/Tijera, Simón Dice y Adivina el Número',
       'Juego con 3 niveles de dificultad con eventos aleatorios por nivel y distinta probabilidad de intervención según la puntuación del jugador',
       'Estética Cyberpunk con glassmorphism y animaciones GSAP fluidas',
@@ -144,7 +144,7 @@ const projects: Project[] = [
     highlights: [
       'Primera presencia web de la asociación. Panel de administración que permite gestionar el 100% del contenido dinámico sin intervención técnica.',
       'Campus Virtual con gestión de inscripciones a talleres y descarga segura de material de estudio.',
-      'Back-office completo para administración de socios, noticias y moderación de registros en tiempo real.',
+      'Sistema de roles jerárquicos que desbloquea contenido dinámico y áreas privadas según el tipo de usuario.',
       'Sitio institucional moderno con buscador avanzado de novedades y formularios de contacto dinámicos.',
     ],
     stack: ['Vue.js', 'Vite', 'Node.js', 'Express', 'Supabase', 'PostgreSQL', 'Cloudinary', 'Render'],
@@ -163,10 +163,10 @@ const projects: Project[] = [
     description:
       'Editor colaborativo ultraligero y LAN-first diseñado para el aula. Permite que docentes y estudiantes editen el mismo código en tiempo real sin internet, sin cuentas y sin instalación. El docente tiene control total: permisos granulares, bloqueos, visibilidad de cursores y ejecución de código integrada directamente en el navegador.',
     highlights: [
-      'LAN-first diseñado para aulas: funciona con red WiFi local, con o sin conexión a internet',
+      'Funciona con red WiFi local, con o sin conexión a internet — diseñado para aulas sin infraestructura dedicada',
       'Sincronización colaborativa sin conflictos mediante CRDT (Yjs + Hocuspocus) — tecnología de Figma y Notion',
-      'Ejecución de JavaScript en el navegador con fallback automático a Piston API',
-      'Control pedagógico total: roles, permisos granulares por alumno y bloqueos en tiempo real',
+      'Motor de ejecución de JavaScript en el navegador con fallback automático a Piston API',
+      'Control pedagógico total: roles diferenciados, bloqueos selectivos y visibilidad de cursores en tiempo real',
       'PWA con soporte offline e IndexedDB para persistencia local',
     ],
     stack: ['Vue.js 3', 'Nuxt', 'Tiptap', 'Yjs', 'Hocuspocus', 'WebSockets', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'PWA'],
