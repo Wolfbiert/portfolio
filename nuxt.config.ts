@@ -44,6 +44,9 @@ export default defineNuxtConfig({
     description: 'Técnico Superior en Desarrollo de Software especializado en crear soluciones digitales modernas y eficientes.',
   },
 
+  // Desactivar OG Image dinámico (usamos og-image.png estático)
+  ogImage: false,
+
   // App-level head config (meta, fonts)
   app: {
     head: {
